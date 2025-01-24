@@ -14,12 +14,11 @@ module "kms_key" {
   role            = ["roles/owner"]
 }
 
-# Bucket module with encryption using the KMS key
 module "bucket" {
   source      = "./../../"
   name        = "bucket-encryption"
   environment = "test"
-  location    = "us-central1" # Use a regional bucket to match the KMS region
+  location    = "us-central1"
   encryption = {
     kms_key = module.kms_key.key_id
   }

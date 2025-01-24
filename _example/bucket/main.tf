@@ -36,3 +36,4 @@ module "bucket" {
   set_hmac_access          = true
   public_access_prevention = "enforced"
 }
+
